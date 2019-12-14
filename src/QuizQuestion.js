@@ -3,7 +3,11 @@ import QuizQuestionButton from './QuizQuestionButton.js';
 
 class QuizQuestion extends Component {
     handleClick(buttonText) {
+        const isCorrectAnswer = buttonText === this.props.quiz_question.answer ? true : false;
 
+        if (isCorrectAnswer) {
+            this.props.showNextQuestionHandler();
+        }
     }
     render() {
         return (
